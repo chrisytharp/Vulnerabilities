@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Vuln
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PrintNightmare CVE2021-34527
+
+Vuln in PrintSpooler Service - 
+              Allows attacker to perform Privelege Escalation LOCALLY "CVE2021-1675  has to be Performed locally on sever
+              RCE "CVE-2021-34527 can be remotely 
+PrintSpooler Service: is a service mainly used managing print jobs sent to a print server from a client "if diasbled you cant print"
+             Print Spooler runs inside a Process "spoolsv.exe"
+PrintSpooler service(spoolsv.exe) has an Autherization bypass bug, thay allowed anyone to install Print Drivers using RPC (Remote Procedure Calls) functio known as 
+             RpcAddPrinterDriver() Attacker can take advantage by specifying a driver file on a remote server which leads the Print Spooler Service(spoolsv.exe) to execute an 
+             "arbitary" DLL to gains SYSTEM privileges "because print spooler svc(spoolsv.exe) runs as SYSTEM privileges"!!
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ATTACK
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Whats required:
+      1- print spooler service should be running on TARGET domain Controllerr
+      2- Need user name & password "any user privileges can do this"
+      

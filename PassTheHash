@@ -1,0 +1,32 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A Pass-the-Hash (PtH) 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+attack is a technique whereby an attacker captures a password hash & then simply passes it through for authentication and potentially lateral access to other networked 
+systems. The threat actor doesn’t need to decrypt the hash to obtain a plain text password. PtH attacks exploit the authentication protocol, as the passwords hash remains 
+static for every session 'until the password is rotated'. Attackers commonly obtain hashes by scraping a system’s active memory and other techniques.
+
+While Pass-the-Hash attacks can occur on Linux, Unix, and other platforms, they are most prevalent on Windows systems. 
+        In Windows, PtH exploits Single Sign-On (SS0) through NT Lan Manager (NTLM), Kerberos, and other authentication protocols. 
+        When a password is created in Windows, it is hashed and stored in the:
+                 Security Accounts Manager(SAM), 
+                 Local Security Authority Subsystem (LSASS) process memory, 
+                 Credential Manager (CredMan) store, 
+                 ntds.dit database in Active Directory, 
+                 or elsewhere. 
+       When a user logs onto a Windows workstation or server, they essentially leave behind their password credentials.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Prevent Pass-the-Hash Attacks
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        For a PtH attack to succeed, the ATTACKER must 1st gain "local administrative access on a computer" to lift the hash. Once the attacker has a foothold, 
+        they can move laterally with relative ease, lifting more credentials and escalating privileges along the way.
+
+        Least Privilege Security Model: Limits the scope and mitigates the impact of a PtH attack by reducing an attackers ability to escalate privileged access and permissions.
+                                        Removing unnecessary admin rights will go a long way to reducing the threat surface for PtH and many other types of attacks.
+
+        Password Management Solutions: Rotating passwords frequently can condense the window of time during which a stolen hash may be valid. 
+                                        Automating password rotation to occur after each privileged session, you can completely thwart PtH attacks and exploits 
+                                        relying on password reuse.
+
+        Separation of Privileges:       Separating different types of privileged and non-privileged accounts can reduce the scope of usage for administrator accounts, 
+                                        reducing the risks of compromise and opportunities for lateral movement.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
