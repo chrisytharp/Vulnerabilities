@@ -1,0 +1,63 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSTALL
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1.) Install from Kali/OpenVAS repos 
+  2.) Install from source 
+  3.) run from a docker container (Preferred Method)
+
+3a.) apt install docker.io
+
+3b.) docker run -d -p 443:443 --name openvas mikesplain/openvas
+          
+          "This will pull & run the docker container
+          
+3c.) Navigate to "https://127.0.0.1"  credentials "admin/admin"
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Initial Config..
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.) Navigating to "SCANS > TASKS" and click on the purple magic wand icon to begin the basic configuration wizard
+
+      Note: Initially scan your localhost to ensure everything is properly configured "127.0.0.1"
+      
+.) Dashboard will appear for monitoring and analyzing your complete and ongoing scans
+
+.) After scan finishes Navigate to "SCANS > REPORTS" and click on newly created report
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Basic TASK Creation 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.) Goto "SCANS >TASKS" to create a new scan
+
+.) Navigate to the star icon (upper right-hand corner of the Tasks dashboard) & select "NEW TASK" 
+
+.) Name, Scan Targets, and Scanner Type, and Scan Config
+
+    Name: Allows us to set the name of the scan
+    Scan Targets: The targets to scan can include Hosts, Ports, & Credentials
+    Scanner: The scanner by default will be OpenVAS architecture BUT you can set this to any scanner in the settings menu
+    Scan Config: OpenVAS has 7 different scan types is based on how aggressive or what information you want to collect from your scan
+
+Scoping a New Target:
+---------------------
+    
+.) Navigate to the star icon next to "SCAN TARGETS"
+
+.) The two main options you will need to configure are the "NAME" & "HOSTS". Other options will only be used in advanced vulnerability management solutions
+
+.) Now the TARGET is scoped continue to create task and begin the scan
+
+.)Once you create the task you will be brought back to the scan dashboard where you can monitor and start your task
+
+.)To start the task navigate to the start icon under Actions and press Green Play Button
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
